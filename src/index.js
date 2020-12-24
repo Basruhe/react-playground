@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+
+// A list of testing Components
+// sending props between components:
+import Calendar from "./components/Calendar";
+// passing an array as props:
+import ToDo from "./components/ArrayAsProps/ArrayAsProps";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ToDo />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
