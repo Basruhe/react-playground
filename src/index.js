@@ -8,10 +8,12 @@ import reportWebVitals from "./reportWebVitals";
 import Calendar from "./components/Calendar";
 // passing an array as props:
 import ToDo from "./components/ArrayAsProps/ArrayAsProps";
+// mapping and displaying input as listed items
+import MappedList from "./components/MapToList/MapToList";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ToDo />
+    <MappedList />
   </React.StrictMode>,
   document.getElementById("root")
 );
