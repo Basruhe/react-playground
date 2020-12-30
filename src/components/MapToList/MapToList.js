@@ -8,18 +8,24 @@ export default class MappedList extends Component {
       ListItems: [],
     };
   }
+
+  handleSubmit() {
+    console.log("button pressed");
+  }
+
   render() {
-    return <h1>Nothing yet</h1>;
+    return (
+      <div>
+        <textarea
+          onChange={this.handleChange}
+          value={this.state.userInput}
+          placeholder="input here, separate items with a comma"
+        ></textarea>
+        <button onClick={this.handleSubmit}>Press</button>
+        <h1>Your list:</h1>
+      </div>
+    );
   }
 }
-
-// class MyToDoList extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     // Change code below this line
-// this.state = {
-//   userInput: '',
-//   toDoList: [],
-// }
 
 // Also see; https://www.freecodecamp.org/learn/front-end-libraries/react/use-array-map-to-dynamically-render-elements
