@@ -4,25 +4,41 @@ export default class MappedList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      InputText: "",
-      ListItems: [],
+      inputByUser: "",
+      groceryList: [],
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
-    console.log("button pressed");
+    const itemsArray = this.state.inputByUser.split(",");
+    this.setState({
+      groceryList: itemsArray,
+    });
+  }
+  handleChange(e) {
+    this.setState({
+      inputByUser: e.target.value,
+    });
   }
 
   render() {
+    const items = this.state.groceryList.map((item) => <li>{item}</li>);
     return (
       <div>
+        <p>Input groceries</p>
         <textarea
           onChange={this.handleChange}
           value={this.state.userInput}
-          placeholder="input here, separate items with a comma"
-        ></textarea>
-        <button onClick={this.handleSubmit}>Press</button>
-        <h1>Your list:</h1>
+          placeholder="Separate your groceries with commas"
+        />
+        <br />
+        <button onClick={this.handleSubmit}>
+          Press to create grocery list
+        </button>
+        <p>Your Grocery list:{items}</p>
       </div>
     );
   }
