@@ -14,6 +14,10 @@ export default class MappedList extends Component {
 
   handleSubmit() {
     const itemsArray = this.state.inputByUser.split(",");
+    const lowerCaseArray = itemsArray.map(function (item) {
+      return item.toLowerCase();
+    });
+    console.log(lowerCaseArray);
     this.setState({
       groceryList: itemsArray,
     });
@@ -26,6 +30,7 @@ export default class MappedList extends Component {
 
   render() {
     const items = this.state.groceryList.map((item) => <li>{item}</li>);
+
     return (
       <div>
         <p>Input groceries</p>
@@ -38,7 +43,9 @@ export default class MappedList extends Component {
         <button onClick={this.handleSubmit}>
           Press to create grocery list
         </button>
-        <p>Your Grocery list:{items}</p>
+        <p style={{ backgroundColor: "lightblue" }} listStyle>
+          Your Grocery list:{items}
+        </p>
       </div>
     );
   }
